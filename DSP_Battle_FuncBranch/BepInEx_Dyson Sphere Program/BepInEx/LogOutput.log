@@ -1,0 +1,75 @@
+[Message:   BepInEx] BepInEx 5.4.17.0 - DSPGAME (2024/2/4 15:41:42)
+[Info   :   BepInEx] Running under Unity v2018.4.12.5889476
+[Info   :   BepInEx] CLR runtime version: 4.0.30319.17020
+[Info   :   BepInEx] Supports SRE: False
+[Info   :   BepInEx] System platform: Bits64, Windows
+[Message:   BepInEx] Preloader started
+[Info   :   BepInEx] Loaded 1 patcher method from [BepInEx.Preloader 5.4.17.0]
+[Info   :   BepInEx] Loaded 1 patcher method from [CommonAPIPreloader 1.6.5.0]
+[Info   :   BepInEx] Loaded 1 patcher method from [BlueprintTweaksPatcher 1.0.0.0]
+[Info   :   BepInEx] 3 patcher plugins loaded
+[Info   :   BepInEx] Patching [UnityEngine.CoreModule] with [BepInEx.Chainloader]
+[Info   :   BepInEx] Patching [Assembly-CSharp] with [BlueprintTweaks.Preloader]
+[Info   :BlueprintTweaks Preloader] Preloader patching is successful!
+[Info   :   BepInEx] Patching [Assembly-CSharp] with [CommonAPI.Preloader]
+[Info   :Common API Preloader] Preloader patching is successful!
+[Message:   BepInEx] Preloader finished
+[Message:   BepInEx] Chainloader ready
+[Message:   BepInEx] Chainloader started
+[Info   :   BepInEx] 13 plugins to load
+[Warning:   BepInEx] Plugin [DSP Common API 1.6.5.0] targets a wrong version of BepInEx (5.4.20.0) and might not work until you update
+[Warning:   BepInEx] Plugin [Common API Nebula Compatibility 1.6.5.0] targets a wrong version of BepInEx (5.4.20.0) and might not work until you update
+[Warning:   BepInEx] Plugin [DSP Mod Save 1.2.1] targets a wrong version of BepInEx (5.4.20.0) and might not work until you update
+[Warning:   BepInEx] Plugin [Blueprint Tweaks 1.6.4] targets a wrong version of BepInEx (5.4.20.0) and might not work until you update
+[Warning:   BepInEx] Plugin [Blueprint Tweaks Installation Checker 1.6.4] targets a wrong version of BepInEx (5.4.20.0) and might not work until you update
+[Warning:   BepInEx] Plugin [NebulaMultiplayerModApi 2.0.0.24] targets a wrong version of BepInEx (5.4.20.0) and might not work until you update
+[Warning:   BepInEx] Plugin [LDBTool 3.0.1] targets a wrong version of BepInEx (5.4.20.0) and might not work until you update
+[Info   :   BepInEx] Loading [DSP Mod Save 1.2.1]
+[Info   :   BepInEx] Loading [LDBTool 3.0.1]
+[Info   :   LDBTool] LDBTool is loaded successfully!
+[Info   :   BepInEx] Loading [DSP Common API 1.6.5.0]
+[Info   :DSP Common API] Enabling CommonAPI Submodule: LocalizationModule
+[Info   :DSP Common API] Enabling CommonAPI Submodule: PickerExtensionsSystem
+[Info   :DSP Common API] Enabling CommonAPI Submodule: ProtoRegistry
+[Info   :DSP Common API] Enabling CommonAPI Submodule: TabSystem
+[Info   :DSP Common API] Enabling CommonAPI Submodule: CustomKeyBindSystem
+[Info   :DSP Common API] Common API is initialized!
+[Info   :   BepInEx] Loading [MoreMegaStructure 1.3]
+[Info   :DSP Common API] Mod Gnimaerd.DSP.plugin.MoreMegaStructure loading phase is over.
+[Info   :   BepInEx] Loading [DSP_Battle 2.1.2]
+[Info   :DSP Common API] Mod com.ckcz123.DSP_Battle loading phase is over.
+[Warning:DSP Common API] Trying to override translation '尼科尔戴森光束' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '尼科尔戴森光束' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '尼科尔戴森光束描述' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '尼科尔戴森光束描述' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '尼科尔戴森光束结论' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '尼科尔戴森光束结论' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '恒星炮冷却中' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '恒星炮冷却中' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '恒星炮充能中' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '恒星炮充能中' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation 'relicTipTitle0-7' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation 'relicTipTitle0-7' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation 'relicTipTitle0-7' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '功勋阶级' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '功勋阶级' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '功勋阶级' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '消灭行星全部黑雾单位' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '消灭行星全部黑雾单位' via RegisterTranslation, this is not supported. Use EditTranslation
+[Warning:DSP Common API] Trying to override translation '消灭行星全部黑雾单位' via RegisterTranslation, this is not supported. Use EditTranslation
+[Info   :   BepInEx] Loading [Prinny_240205 1.0.0]
+[Info   :   BepInEx] Loading [NebulaMultiplayerModApi 2.0.0.24]
+[Info   :   BepInEx] Loading [Common API Nebula Compatibility 1.6.5.0]
+[Info   :   BepInEx] Loading [MMSBattle 1.0]
+[Error  :   BepInEx] Could not load [MMSBottleneckCompat 1.0] because it has missing dependencies: Bottleneck
+[Error  :   BepInEx] Could not load [MMSGCPatch 1.0] because it has missing dependencies: org.LoShin.GenesisBook
+[Info   :   BepInEx] Loading [Blueprint Tweaks 1.6.4]
+[Info   :DSP Common API] Successfully loaded translations from 'F:\SteamLibrary\steamapps\common\Dyson Sphere Program\BepInEx\plugins\kremnev8-BlueprintTweaks\Locale'
+[Info   :Blueprint Tweaks] Blueprint tweaks mod is initialized!
+[Info   :   BepInEx] Loading [Blueprint Tweaks Installation Checker 1.6.4]
+[Info   :Blueprint Tweaks Installation Checker] Check successful. Installation is correct!
+[Message:   BepInEx] Chainloader startup complete
+[Info   :DSP Common API] Editing localizations!
+[Info   :DSP Mod Save] DSP Mod Save is initialized!
+[Info   :Common API Nebula Compatibility] Common API Nebula Compatibility ready!
+[Info   :DSP Mod Save] _autosave_tmp: Game mod save not exist

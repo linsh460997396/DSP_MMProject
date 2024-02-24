@@ -1,0 +1,11 @@
+{
+    "name": "MoreMegaStructure",
+    "version_number": "1.3.5",
+    "website_url": "https://github.com/jinxOAO/DSPmod_MoreMegaStructures",
+    "description": "Add 6 new mega structures: Matter Decompressor, Science Nexus, Warpfield Broadcast Array, Interstellar Assembly, Crystal Reconstructor, and Star Cannon.  新增了六种巨构建筑：物质解压器，科学枢纽，折跃场广播阵列，星际组装厂，晶体重构器和恒星炮。",
+    "dependencies": [
+"xiaoye97-BepInEx-5.4.17",
+"xiaoye97-LDBTool-2.0.6",
+"CommonAPI-DSPModSave-1.1.4",
+"CommonAPI-CommonAPI-1.6.3"]
+}

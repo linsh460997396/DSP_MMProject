@@ -1,6 +1,0 @@
-D:\VSWork\2022\DSP_MMProject\Prinny\bin\Debug\Prinny.dll
-D:\VSWork\2022\DSP_MMProject\Prinny\bin\Debug\Prinny.pdb
-D:\VSWork\2022\DSP_MMProject\Prinny\obj\Debug\Prinny.csproj.AssemblyReference.cache
-D:\VSWork\2022\DSP_MMProject\Prinny\obj\Debug\Prinny.csproj.CoreCompileInputs.cache
-D:\VSWork\2022\DSP_MMProject\Prinny\obj\Debug\Prinny.dll
-D:\VSWork\2022\DSP_MMProject\Prinny\obj\Debug\Prinny.pdb
