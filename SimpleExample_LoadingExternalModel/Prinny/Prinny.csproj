@@ -59,8 +59,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Prinny_Main.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\CodeObfuscator\CodeObfuscator.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\DotNetEvent\KeyboardHook.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\DotNetEvent\MouseHook.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\DotNetEvent\RecordService.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\Game\Abilcmd.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\Game\Game.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\Game\Order.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\Game\UnitGroup.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\MainUpdate.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\MMCore.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\Player.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\SubUpdate.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\TimerUpdate.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\Unit.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\UnitType\Item.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\UnitType\Marine.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\Class\Unity\Resource.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicEnum\Entry.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicEnum\OrderQueue.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicEnum\OrderTarget.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicEnum\PlayerProp.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicEnum\PlayerPropOp.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicEnum\UnitCount.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicEnum\UnitCreateTag.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicEnum\UnitProp.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicFuncref\MMFuncref.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicStruc\Point2F.cs" />
+    <Compile Include="Scripts\MetalMaxSystem\PublicStruc\Point3F.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
