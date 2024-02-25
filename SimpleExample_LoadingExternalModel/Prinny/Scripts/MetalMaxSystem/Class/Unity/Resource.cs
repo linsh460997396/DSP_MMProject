@@ -535,3 +535,4 @@ namespace MetalMaxSystem
 //如果你使用 IEnumerator协程方法体的实例作为参数来尝试停止协程，并且多个协程实例Coroutine实际上使用了相同的 IEnumerator 实例，那么所有使用相同 IEnumerator 实例的协程都将被停止。
 //这是因为 StopCoroutine 方法会根据提供的 IEnumerator 实例来查找和停止所有相关的协程。
 //（这在实践中是不常见的，每个协程实例都应设计成同一时刻有其自己的 IEnumerator 实现）
+

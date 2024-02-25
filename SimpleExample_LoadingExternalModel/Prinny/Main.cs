@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using BepInEx;
-using MetalMaxSystem;
 using System.Collections;
 using System.IO;
 
@@ -28,6 +27,16 @@ namespace Prinny
         /// </summary>
         //public List<Coroutine> activeCoroutines = new List<Coroutine>(); //取消多协程
         //public bool multiCoroutine = false;
+
+        //public Resource()
+        //{
+        //    Debug.Log("Prinny: Resource 对象已建立！");
+        //}
+
+        //~Resource()
+        //{
+        //    Debug.Log("Prinny: Resource 对象已摧毁！");
+        //}
 
         //ABTest_CustomFuncTemplates
 
@@ -395,54 +404,68 @@ namespace Prinny
         {
             //开启一个协程进行资源加载
             LoadAllFromMemoryAsync("BepInEx/plugins/DSP_Battle_AssetBundles/abtest");
-            for (int i = 0; i < gameObjectGroup.Length; i++)
-            {
-                Debug.Log("读取AB包中第" + i.ToString() + "个元素成功！");
-                Debug.Log("GameObject " + i + " Name: " + gameObjectGroup[i].name);
-            }
+            //协程结束前尚无法马上取得素材，请等待
+
+            //Unity编辑器中Application.dataPath返回Assets文件夹路径，打包后为应用程序所在路径
+            //LoadAllFromMemoryAsync(Application.dataPath + "/AssetBundle/abtest");
         }
 
         private void Update()
         {
+            #region 外部模型导入测试
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                Debug.Log("按下了Q，只能创建一次哦");
-                //实例化资源中第一个游戏物体（前提是资源已经在协程里加载完毕）
-                if (!isCoroutineRunning)
+                Debug.Log("按下了Q键，执行功能测试");
+
+                //实例化资源中第一个游戏物体（前提是资源已经在协程里加载完毕，这里要进行检查）
+                if (GameMain.mainPlayer != null && !isCoroutineRunning)
                 {
-                    GameObject odinMech = GameObject.Instantiate(gameObjectGroup[0], GameMain.mainPlayer.position, Quaternion.identity);
-                    odinMech.transform.forward = GameMain.mainPlayer.transform.forward;
-                    odinMech.transform.rotation = GameMain.mainPlayer.transform.rotation;
+                    Vector3 targetPosition = GameMain.mainPlayer.transform.position;
+                    Debug.Log("伊卡洛斯位置: " + targetPosition.ToString());
+
+                    Debug.Log("gameObjectGroup.Length => " + gameObjectGroup.Length.ToString());
+                    for (int i = 0; i < gameObjectGroup.Length; i++)
+                    {
+                        Debug.Log("读取AB包中第" + i.ToString() + "个元素成功！");
+                        Debug.Log("GameObject " + i + " Name: " + gameObjectGroup[i].name);
+                    }
+                    //gameObjectGroup[0]是奥丁，gameObjectGroup[1]是跳虫，目前AB包（abtest）内这只有2个预制体。
+                    GameObject odinMech = GameObject.Instantiate(gameObjectGroup[0], GameMain.mainPlayer.transform.position, Quaternion.identity);
+                    // 将odinMech设置为mainPlayer的子对象（直接拼装了，比下方的每帧修正更省事）
+
+                    //mainPlayer的游戏物体名（实例对象ID字符串）
+                    Debug.Log("mainPlayer对应的游戏物体ID：" + GameMain.mainPlayer.gameObject.name);
+
+                    //LayerMask layerMask = LayerMask.GetMask("指定层的LayerName");
+
+                    //layerMask设置为 ~0。这将包含所有 32 个可用层级。
+                    LayerMask layerMask = ~0;
+
+                    // 在 mainPlayer 游戏对象周围指定半径内检测游戏对象
+                    Debug.Log("对周围10.0半径内的游戏对象镭射检测...");
+                    Collider[] hits = Physics.OverlapSphere(GameMain.mainPlayer.transform.position, 10f, layerMask);
+
+                    // 输出检测到的游戏对象的名称
+                    foreach (Collider hit in hits)
+                    {
+                        //得到游戏对象
+                        GameObject hitObject = hit.gameObject;
+                        Debug.Log("检测到游戏对象: " + hitObject.name);
+                        //odinMech.transform.parent = GameObject.Find(hitObject.name).transform;
+                    }
+
+                    //拼接模型到角色
+                    odinMech.transform.parent = GameMain.mainPlayer.gameObject.transform;
+
+                    //odinMech.transform.parent = GameObject.Find("Player(Icarus 1)").transform;
+
+                    //odinMech.transform.localPosition = mainPlayer.transform.position;
+                    //odinMech.transform.localRotation = mainPlayer.transform.rotation;
+                    //odinMech.transform.localScale = mainPlayer.transform.localScale;
                 }
+                else { Debug.Log("协程未完成！依然读取AB包中..."); }
             }
+            #endregion
         }
     }
-
-    //public class Main : BaseUnityPlugin
-    //{
-    //    //建立资源方法类实例
-    //    Resource testResource = new Resource();
-
-    //    //↓入口函数处运用示范↓
-    //    private void Awake()
-    //    {
-    //        //开启一个协程进行资源加载
-    //        testResource.LoadAllFromMemoryAsync("BepInEx/plugins/DSP_Battle_AssetBundles/abtest");
-    //    }
-
-    //    private void Update()
-    //    {
-    //        if (Input.GetKeyDown(KeyCode.Q))
-    //        {
-    //            Debug.Log("按下了Q，只能创建一次哦");
-    //            //实例化资源中第一个游戏物体（前提是资源已经在协程里加载完毕）
-    //            if (!testResource.isCoroutineRunning)
-    //            {
-    //                GameObject odinMech = GameObject.Instantiate(testResource.gameObjectGroup[0], GameMain.mainPlayer.position, Quaternion.identity);
-    //                odinMech.transform.forward = GameMain.mainPlayer.transform.forward;
-    //                odinMech.transform.rotation = GameMain.mainPlayer.transform.rotation;
-    //            }
-    //        }
-    //    }
-    //}
 }
