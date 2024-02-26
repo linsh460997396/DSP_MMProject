@@ -6,7 +6,6 @@ using CommonAPI.Systems;
 using CommonAPI.Systems.ModLocalization;
 using crecheng.DSPModSave;
 using HarmonyLib;
-using MetalMaxSystem;
 using System;
 using System.Collections;
 using System.IO;
@@ -25,7 +24,7 @@ namespace DSP_Battle
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry))]
     [CommonAPISubmoduleDependency(nameof(TabSystem))]
     [CommonAPISubmoduleDependency(nameof(LocalizationModule))]
-
+    
     public class DspBattlePlugin : BaseUnityPlugin, IModCanSave
     {
         #region 这些代码是用来加载AB包的具体方法（如果协程调用失败，请复制到主线程入口所在类使用）
@@ -457,13 +456,13 @@ namespace DSP_Battle
             starCannonRenderLevel = Config.Bind<int>("config", "StarCannonRenderLevel", 2, "[0-3] Higher Level will provide more star cannon effect and particles but might decrease the UPS and FPS when star cannon is firing. 更高的设置会提供更多的恒星炮特效，但可能会在恒星炮开火时降低帧率，反之则可能提高开火时的帧率。");
             starCannonDirectionReverse = Config.Bind<bool>("config", "starCannonDirectionReverse", false, "Deprecated. 已弃用。");
 
-
+            
             MoreMegaStructure.StarCannon.renderLevel = starCannonRenderLevel.Value;
             MoreMegaStructure.StarCannon.renderLevel = MoreMegaStructure.StarCannon.renderLevel > 3 ? 3 : MoreMegaStructure.StarCannon.renderLevel;
             MoreMegaStructure.StarCannon.renderLevel = MoreMegaStructure.StarCannon.renderLevel < 0 ? 0 : MoreMegaStructure.StarCannon.renderLevel;
             //EnemyShips.Init();
             Harmony.CreateAndPatchAll(typeof(DspBattlePlugin));
-
+            
             Harmony.CreateAndPatchAll(typeof(BattleProtos));
             Harmony.CreateAndPatchAll(typeof(FastStartOption));
             Harmony.CreateAndPatchAll(typeof(UIDialogPatch));
@@ -708,7 +707,7 @@ namespace DSP_Battle
         }
 
         public static void InitStaticDataWhenLoad()
-        {
+        { 
             BattleProtos.RewriteTutorialProtosWhenLoad();
             BattleProtos.EditProtossWhenLoad();
         }

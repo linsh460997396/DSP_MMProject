@@ -57,7 +57,7 @@
 [Warning:DSP Common API] Trying to override translation '消灭行星全部黑雾单位' via RegisterTranslation, this is not supported. Use EditTranslation
 [Warning:DSP Common API] Trying to override translation '消灭行星全部黑雾单位' via RegisterTranslation, this is not supported. Use EditTranslation
 [Warning:DSP Common API] Trying to override translation '消灭行星全部黑雾单位' via RegisterTranslation, this is not supported. Use EditTranslation
-[Info   :   BepInEx] Loading [Prinny_240205 1.0.0]
+[Info   :   BepInEx] Loading [Prinny_240225 1.0.0]
 [Info   :   BepInEx] Loading [NebulaMultiplayerModApi 2.0.0.24]
 [Info   :   BepInEx] Loading [Common API Nebula Compatibility 1.6.5.0]
 [Info   :   BepInEx] Loading [MMSBattle 1.0]
@@ -73,3 +73,99 @@
 [Info   :DSP Mod Save] DSP Mod Save is initialized!
 [Info   :Common API Nebula Compatibility] Common API Nebula Compatibility ready!
 [Info   :DSP Mod Save] _autosave_tmp: Game mod save not exist
+[Info   :DSP Common API] Checking missing machines!
+[Info   :   LDBTool] Pre Loading...
+[Info   :   LDBTool] Add 8035 水滴额外伤害 to ItemProtoSet.
+[Info   :   LDBTool] Add 9480 引力发生装置 to ItemProtoSet.
+[Info   :   LDBTool] Add 9481 位面约束环 to ItemProtoSet.
+[Info   :   LDBTool] Add 9482 引力钻头 to ItemProtoSet.
+[Info   :   LDBTool] Add 9483 隧穿激发装置 to ItemProtoSet.
+[Info   :   LDBTool] Add 9484 谐振盘 to ItemProtoSet.
+[Info   :   LDBTool] Add 9485 光子探针 to ItemProtoSet.
+[Info   :   LDBTool] Add 9486 量子计算机 to ItemProtoSet.
+[Info   :   LDBTool] Add 9487 星际组装厂组件 to ItemProtoSet.
+[Info   :   LDBTool] Add 9488 物质解压器运载火箭 to ItemProtoSet.
+[Info   :   LDBTool] Add 9489 科学枢纽运载火箭 to ItemProtoSet.
+[Info   :   LDBTool] Add 9490 谐振发射器运载火箭 to ItemProtoSet.
+[Info   :   LDBTool] Add 9491 星际组装厂运载火箭 to ItemProtoSet.
+[Info   :   LDBTool] Add 9492 晶体重构器运载火箭 to ItemProtoSet.
+[Info   :   LDBTool] Add 9500 多功能集成组件 to ItemProtoSet.
+[Info   :   LDBTool] Add 9503 力场发生器 to ItemProtoSet.
+[Info   :   LDBTool] Add 9504 复合态晶体 to ItemProtoSet.
+[Info   :   LDBTool] Add 9505 电磁力抑制器 to ItemProtoSet.
+[Info   :   LDBTool] Add 9506 胶子发生器 to ItemProtoSet.
+[Info   :   LDBTool] Add 9507 强力过载装置 to ItemProtoSet.
+[Info   :   LDBTool] Add 9508 导流框架 to ItemProtoSet.
+[Info   :   LDBTool] Add 9509 恒星炮组件 to ItemProtoSet.
+[Info   :   LDBTool] Add 9510 恒星炮运载火箭 to ItemProtoSet.
+[Info   :   LDBTool] Add 9511 水滴 to ItemProtoSet.
+[Info   :   LDBTool] Add 530 引力发生装置 to RecipeProtoSet.
+[Info   :   LDBTool] Add 531 位面约束环 to RecipeProtoSet.
+[Info   :   LDBTool] Add 532 引力钻头 to RecipeProtoSet.
+[Info   :   LDBTool] Add 533 隧穿激发装置 to RecipeProtoSet.
+[Info   :   LDBTool] Add 534 谐振盘 to RecipeProtoSet.
+[Info   :   LDBTool] Add 535 光子探针 to RecipeProtoSet.
+[Info   :   LDBTool] Add 536 量子计算机 to RecipeProtoSet.
+[Info   :   LDBTool] Add 537 星际组装厂组件 to RecipeProtoSet.
+[Info   :   LDBTool] Add 550 多功能集成组件 to RecipeProtoSet.
+[Info   :   LDBTool] Add 538 物质解压器运载火箭 to RecipeProtoSet.
+[Info   :   LDBTool] Add 539 科学枢纽运载火箭 to RecipeProtoSet.
+[Info   :   LDBTool] Add 540 谐振发射器运载火箭 to RecipeProtoSet.
+[Info   :   LDBTool] Add 541 星际组装厂运载火箭 to RecipeProtoSet.
+[Info   :   LDBTool] Add 542 晶体重构器运载火箭 to RecipeProtoSet.
+[Info   :   LDBTool] Add 565 力场发生器Recipe to RecipeProtoSet.
+[Info   :   LDBTool] Add 566 复合态晶体Recipe to RecipeProtoSet.
+[Info   :   LDBTool] Add 567 电磁力抑制器Recipe to RecipeProtoSet.
+[Info   :   LDBTool] Add 568 胶子发生器Recipe to RecipeProtoSet.
+[Info   :   LDBTool] Add 569 强力过载装置Recipe to RecipeProtoSet.
+[Info   :   LDBTool] Add 570 导流框架Recipe to RecipeProtoSet.
+[Info   :   LDBTool] Add 571 恒星炮组件Recipe to RecipeProtoSet.
+[Info   :   LDBTool] Add 572 恒星炮运载火箭Recipe to RecipeProtoSet.
+[Info   :   LDBTool] Add 573 水滴gmRecipe to RecipeProtoSet.
+[Info   :   LDBTool] Add 1918 尼科尔-戴森光束 to TechProtoSet.
+[Info   :   LDBTool] Add 1919 玻色子操控 to TechProtoSet.
+[Info   :   LDBTool] Add 31 深空来敌玩法介绍 to TutorialProtoSet.
+[Info   :   LDBTool] Add 32 入侵与防御 to TutorialProtoSet.
+[Info   :   LDBTool] Add 33 功勋阶级 to TutorialProtoSet.
+[Info   :   LDBTool] Add 34 恒星炮（尼科尔-戴森光束） to TutorialProtoSet.
+[Info   :   LDBTool] Add 35 常规圣物 to TutorialProtoSet.
+[Info   :   LDBTool] Add 36 被诅咒的圣物 to TutorialProtoSet.
+[Info   :   LDBTool] Post Loading...
+[Info   :DSP Common API] Reinit cached data!
+[Info   :DSP Common API] Post loading is complete!
+[Info   :   LDBTool] Add 9493 铁金属重构装置 to ItemProtoSet.
+[Info   :   LDBTool] Add 9494 铜金属重构装置 to ItemProtoSet.
+[Info   :   LDBTool] Add 9495 高纯硅重构装置 to ItemProtoSet.
+[Info   :   LDBTool] Add 9496 钛金属重构装置 to ItemProtoSet.
+[Info   :   LDBTool] Add 9497 单极磁石重构装置 to ItemProtoSet.
+[Info   :   LDBTool] Add 9498 晶体接收器 to ItemProtoSet.
+[Info   :   LDBTool] Add 9499 组件集成装置 to ItemProtoSet.
+[Info   :   LDBTool] Add 9501 石墨提炼装置 to ItemProtoSet.
+[Info   :   LDBTool] Add 9502 光栅晶体接收器 to ItemProtoSet.
+[Info   :   LDBTool] Add 9512 物资交换物流站 to ItemProtoSet.
+[Info   :   LDBTool] Add 554 制造台 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 551 传送带 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 556 化工厂 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 558 对撞机 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 562 星际物流 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 559 研究站 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 561 行星内物流 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 553 配电站 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 560 人造恒星 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 557 精炼厂 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 555 位面熔炉 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 552 分拣器 快速组装 to RecipeProtoSet.
+[Info   :   LDBTool] Add 543 铁金属重构装置 to RecipeProtoSet.
+[Info   :   LDBTool] Add 544 铜金属重构装置 to RecipeProtoSet.
+[Info   :   LDBTool] Add 545 高纯硅重构装置 to RecipeProtoSet.
+[Info   :   LDBTool] Add 546 钛金属重构装置 to RecipeProtoSet.
+[Info   :   LDBTool] Add 547 单极磁石重构装置 to RecipeProtoSet.
+[Info   :   LDBTool] Add 548 晶体接收器 to RecipeProtoSet.
+[Info   :   LDBTool] Add 549 组件集成装置 to RecipeProtoSet.
+[Info   :   LDBTool] Add 563 石墨提炼装置 to RecipeProtoSet.
+[Info   :   LDBTool] Add 564 光栅晶体接收器 to RecipeProtoSet.
+[Info   :   LDBTool] Add 575 物资交换物流站 to RecipeProtoSet.
+[Info   :   LDBTool]  Set build bar at 6,9 ID:9512 name:物资交换物流站
+[Info   :   LDBTool] Done.
+[Warning:DSP Common API] This version of CommonAPI was built for build id "0.10.28.21308", you are running "0.10.29.21950".
+[Warning:DSP Common API] Should any problems arise, please check for a new version before reporting issues.
