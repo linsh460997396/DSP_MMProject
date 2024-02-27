@@ -496,6 +496,7 @@ namespace DSP_Battle
 
             //Unity编辑器中Application.dataPath返回Assets文件夹路径，打包后为应用程序所在路径
             //LoadAllFromMemoryAsync(Application.dataPath + "/AssetBundle/abtest");
+
         }
 
         public void Update()
