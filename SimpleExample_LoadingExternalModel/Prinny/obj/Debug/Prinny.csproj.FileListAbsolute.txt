@@ -6,3 +6,4 @@ D:\VSWork\2022\DSP_MMProject\Prinny\obj\Debug\Prinny.dll
 D:\VSWork\2022\DSP_MMProject\Prinny\obj\Debug\Prinny.pdb
 D:\VSWork\2022\DSP_MMProject\Prinny\bin\Debug\UnityEngine.PhysicsModule.dll
 D:\VSWork\2022\DSP_MMProject\Prinny\obj\Debug\Prinny.csproj.Up2Date
+D:\VSWork\2022\DSP_MMProject\Prinny\bin\Debug\UnityEngine.AnimationModule.dll
