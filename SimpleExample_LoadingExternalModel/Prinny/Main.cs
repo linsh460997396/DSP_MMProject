@@ -399,6 +399,9 @@ namespace Prinny
 
         #endregion
 
+        public GameObject odin;
+        public GameObject icarus;
+
         //↓入口函数处运用示范↓
         private void Awake()
         {
@@ -410,12 +413,22 @@ namespace Prinny
             //LoadAllFromMemoryAsync(Application.dataPath + "/AssetBundle/abtest");
         }
 
-        public GameObject odin;
-        public GameObject icarus;
+        private void Start()
+        {
+            if (!isCoroutineRunning)
+            {
+                Debug.Log("gameObjectGroup.Length => " + gameObjectGroup.Length.ToString());
+                for (int i = 0; i < gameObjectGroup.Length; i++)
+                {
+                    Debug.Log("读取AB包中第" + i.ToString() + "个元素成功！");
+                    Debug.Log("GameObject " + i + " Name: " + gameObjectGroup[i].name);
+                }
+            }
+        }
 
         private void Update()
         {
-            #region 外部模型导入测试
+            #region 外部模型导入
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -424,35 +437,19 @@ namespace Prinny
                 //实例化资源中第一个游戏物体（前提是资源已经在协程里加载完毕，这里要进行检查）
                 if (!isCoroutineRunning)
                 {
-                    Debug.Log("gameObjectGroup.Length => " + gameObjectGroup.Length.ToString());
-                    for (int i = 0; i < gameObjectGroup.Length; i++)
-                    {
-                        Debug.Log("读取AB包中第" + i.ToString() + "个元素成功！");
-                        Debug.Log("GameObject " + i + " Name: " + gameObjectGroup[i].name);
-                    }
-
                     icarus = GameObject.Find("Player (Icarus 1)");
                     if (icarus != null)
                     {
-                        //gameObjectGroup[0]是奥丁，gameObjectGroup[1]是跳虫，目前AB包（abtest）内这只有2个预制体。
-                        odin = Instantiate(gameObjectGroup[0], icarus.transform.position, icarus.transform.rotation);
-                        //Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
-                        //Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
-                        //Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
-                        //Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
-
-                        //odin = Instantiate(gameObjectGroup[0], GameMain.mainPlayer.transform.position, GameMain.mainPlayer.transform.rotation);
-                        //GameObject odin = GameObject.Instantiate(gameObjectGroup[0], GameMain.mainPlayer.transform.position, Quaternion.identity);
-
-                        //Debug.Log("GameMain.mainPlayer.gameObject.name: " + GameMain.mainPlayer.gameObject.name);
-                        //Debug.Log("GameMain.mainPlayer.gameObject.transform.position: " + GameMain.mainPlayer.gameObject.transform.position.ToString());
-                        //Debug.Log("GameMain.mainPlayer.gameObject.transform.rotation: " + GameMain.mainPlayer.gameObject.transform.rotation.ToString());
-                        //Debug.Log("GameMain.mainPlayer.transform.position: " + GameMain.mainPlayer.transform.position.ToString());
-                        //Debug.Log("GameMain.mainPlayer.transform.rotation: " + GameMain.mainPlayer.transform.rotation.ToString());
-                        //Debug.Log("GameMain.mainPlayer.transform.localPosition: " + GameMain.mainPlayer.transform.localPosition.ToString());
-                        //Debug.Log("GameMain.mainPlayer.transform.localRotation: " + GameMain.mainPlayer.transform.localRotation.ToString());
-                        //Debug.Log("GameMain.mainPlayer.uPosition: " + GameMain.mainPlayer.uPosition.ToString());
-                        //Debug.Log("GameMain.mainPlayer.uRotation: " + GameMain.mainPlayer.uRotation.ToString());
+                        Debug.Log("伊卡洛斯当前位置");
+                        Debug.Log("GameMain.mainPlayer.gameObject.name: " + GameMain.mainPlayer.gameObject.name);
+                        Debug.Log("GameMain.mainPlayer.gameObject.transform.position: " + GameMain.mainPlayer.gameObject.transform.position.ToString());
+                        Debug.Log("GameMain.mainPlayer.gameObject.transform.rotation: " + GameMain.mainPlayer.gameObject.transform.rotation.ToString());
+                        Debug.Log("GameMain.mainPlayer.transform.position: " + GameMain.mainPlayer.transform.position.ToString());
+                        Debug.Log("GameMain.mainPlayer.transform.rotation: " + GameMain.mainPlayer.transform.rotation.ToString());
+                        Debug.Log("GameMain.mainPlayer.transform.localPosition: " + GameMain.mainPlayer.transform.localPosition.ToString());
+                        Debug.Log("GameMain.mainPlayer.transform.localRotation: " + GameMain.mainPlayer.transform.localRotation.ToString());
+                        Debug.Log("GameMain.mainPlayer.uPosition: " + GameMain.mainPlayer.uPosition.ToString());
+                        Debug.Log("GameMain.mainPlayer.uRotation: " + GameMain.mainPlayer.uRotation.ToString());
                         //[Info: Unity Log] GameMain.mainPlayer.gameObject.name: Player(Icarus 1)
                         //[Info: Unity Log] GameMain.mainPlayer.gameObject.transform.position: (161.3, -12.3, 118.0)
                         //[Info: Unity Log] GameMain.mainPlayer.gameObject.transform.rotation: (0.6, 0.3, -0.3, 0.6)
@@ -464,36 +461,70 @@ namespace Prinny
                         //[Info: Unity Log] GameMain.mainPlayer.uRotation: (0.0, 0.7, 0.7, -0.1)
                     }
 
-                    //测试是否有动画剪辑
+                    if (icarus != null)
+                    {
+                        //gameObjectGroup[0]是奥丁，gameObjectGroup[1]是跳虫，目前AB包（abtest）内这只有2个预制体。
+                        odin = Instantiate(gameObjectGroup[0]);
+                        //odin = Instantiate(gameObjectGroup[0], icarus.transform.position, icarus.transform.rotation);
+                        //odin = Instantiate(gameObjectGroup[0], GameMain.mainPlayer.transform.position, GameMain.mainPlayer.transform.rotation);
+                        //GameObject odin = GameObject.Instantiate(gameObjectGroup[0], GameMain.mainPlayer.transform.position, Quaternion.identity);
+
+                        Debug.Log("奥丁已创建");
+                        Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
+                        Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
+                        Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
+                        Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
+
+                    }
+
+                    //检测动画剪辑
                     Animation[] animations = odin.GetComponents<Animation>();
                     foreach (Animation animation in animations)
                     {
-                        Debug.Log("Animation Name: " + animation.name);
-                        Debug.Log("AnimationClip Name: " + animation.clip.name);
+                        Debug.Log("odinAnimation Name: " + animation.name);
+                        Debug.Log("odinCurrentAnimationClip Name: " + animation.clip.name);
                     }
 
-                    //删除预制体内的刚体，防止子物体参与物理引擎，让子模型完全按主体的Transform行动（使局部Transform不会被物理引擎修改）
+                    //删除预制体内的刚体，防止子物体参与物理引擎，让子模型完全按主体的Transform行动
                     Rigidbody odinRigidbody = odin.GetComponent<Rigidbody>();
                     if (odinRigidbody != null)
                     {
                         Destroy(odinRigidbody);
+                        Debug.Log("删除odin刚体组件，防止Transform被物理引擎修改");
                     }
 
-                    //衔接前游戏物体的世界坐标系的旋转和位置与要衔接的主体保持一致
-                    //odin.transform.position = GameMain.mainPlayer.uPosition;
-                    //odin.transform.rotation = GameMain.mainPlayer.uRotation;
-                    //odin.transform.position = GameMain.mainPlayer.transform.position;
-                    //odin.transform.rotation = GameMain.mainPlayer.transform.rotation;
+                    #region 对游戏物体进行镭射检测并输出碰撞到的物体名
 
                     //LayerMask layerMask = LayerMask.GetMask("指定层的LayerName");
 
-                    //layerMask设置为 ~0。这将包含所有 32 个可用层级。
-                    LayerMask layerMask = ~0;
+                    //layerMask设置为 ~0，这将包含所有 32 个可用层级。
+                    //LayerMask layerMask = ~0;
 
                     // 在 mainPlayer 游戏对象周围指定半径内检测游戏对象
                     Debug.Log("对周围10.0半径内的游戏对象进行镭射检测...");
-                    Collider[] hits = Physics.OverlapSphere(GameMain.mainPlayer.transform.position, 10.0f, layerMask);
 
+                    #region 分层检测
+
+                    //LayerMask layerMask;
+                    //for (layerMask = 0; layerMask < ~0; layerMask++)
+                    //{
+                    //    Collider[] hits = Physics.OverlapSphere(GameMain.mainPlayer.transform.position, 10.0f, layerMask);
+
+                    //    // 输出检测到的游戏对象的名称
+                    //    foreach (Collider hit in hits)
+                    //    {
+                    //        //得到游戏对象
+                    //        GameObject hitObject = hit.gameObject;
+                    //        Debug.Log("检测到游戏对象(第" + layerMask.ToString() + "层): " + hitObject.name);
+                    //    }
+                    //}
+
+                    #endregion
+
+                    #region 全层检测
+
+                    LayerMask layerMask = ~0;
+                    Collider[] hits = Physics.OverlapSphere(GameMain.mainPlayer.transform.position, 10.0f, layerMask);
                     // 输出检测到的游戏对象的名称
                     foreach (Collider hit in hits)
                     {
@@ -502,14 +533,27 @@ namespace Prinny
                         Debug.Log("检测到游戏对象: " + hitObject.name);
                     }
 
+                    #endregion
+
+                    #endregion
+
+                    //衔接前游戏物体的世界坐标系的旋转和位置与要衔接的主体保持一致
+                    odin.transform.position = GameMain.mainPlayer.transform.position;
+                    odin.transform.rotation = GameMain.mainPlayer.transform.rotation;
+                    //odin.transform.position = GameMain.mainPlayer.uPosition;
+                    //odin.transform.rotation = GameMain.mainPlayer.uRotation;
+
                     //将odin设置为mainPlayer的子对象（直接拼装了，比下方的每帧修正更省事）
                     odin.transform.parent = GameMain.mainPlayer.transform;
+                    Debug.Log("奥丁已拼接到mainPlayer");
+
                     //odin.transform.SetParent(GameMain.mainPlayer.gameObject.transform);
 
-                    //Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
-                    //Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
-                    //Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
-                    //Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
+                    Debug.Log("拼接后奥丁的变换属性：");
+                    Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
+                    Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
+                    Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
+                    Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
 
                     //mainPlayer的游戏物体名（实例对象ID字符串）
                     //Debug.Log("mainPlayer对应的游戏物体ID：" + GameMain.mainPlayer.gameObject.name);
@@ -519,23 +563,82 @@ namespace Prinny
             }
             #endregion
 
-            //测试行走动画
+            #region 行走动画
+
             if (odin != null && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
             {
                 odin.GetComponent<Animation>().Play("Walk");
-                //旋转每帧手工调整
-                //odin.transform.localRotation = GameMain.mainPlayer.uRotation;
-
-                //Debug.Log("Walking...");
-                //Debug.Log("GameMain.mainPlayer.gameObject.transform.position: " + GameMain.mainPlayer.gameObject.transform.position.ToString());
-                //Debug.Log("GameMain.mainPlayer.gameObject.transform.rotation: " + GameMain.mainPlayer.gameObject.transform.rotation.ToString());
-                //Debug.Log("GameMain.mainPlayer.transform.position: " + GameMain.mainPlayer.transform.position.ToString());
-                //Debug.Log("GameMain.mainPlayer.transform.rotation: " + GameMain.mainPlayer.transform.rotation.ToString());
-                //Debug.Log("GameMain.mainPlayer.transform.localPosition: " + GameMain.mainPlayer.transform.localPosition.ToString());
-                //Debug.Log("GameMain.mainPlayer.transform.localRotation: " + GameMain.mainPlayer.transform.localRotation.ToString());
-                //Debug.Log("GameMain.mainPlayer.uPosition: " + GameMain.mainPlayer.uPosition.ToString());
-                //Debug.Log("GameMain.mainPlayer.uRotation: " + GameMain.mainPlayer.uRotation.ToString());
             }
+
+            #endregion
+
+            #region 变换检测
+
+            if (odin != null && Input.GetKeyDown(KeyCode.N))
+            {
+                Debug.Log("当前奥丁变换属性：");
+                Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
+                Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
+                Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
+                Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
+                Debug.Log("当前伊卡洛斯变换属性：");
+                Debug.Log("GameMain.mainPlayer.gameObject.name: " + GameMain.mainPlayer.gameObject.name);
+                Debug.Log("GameMain.mainPlayer.gameObject.transform.position: " + GameMain.mainPlayer.gameObject.transform.position.ToString());
+                Debug.Log("GameMain.mainPlayer.gameObject.transform.rotation: " + GameMain.mainPlayer.gameObject.transform.rotation.ToString());
+                Debug.Log("GameMain.mainPlayer.transform.position: " + GameMain.mainPlayer.transform.position.ToString());
+                Debug.Log("GameMain.mainPlayer.transform.rotation: " + GameMain.mainPlayer.transform.rotation.ToString());
+                Debug.Log("GameMain.mainPlayer.transform.localPosition: " + GameMain.mainPlayer.transform.localPosition.ToString());
+                Debug.Log("GameMain.mainPlayer.transform.localRotation: " + GameMain.mainPlayer.transform.localRotation.ToString());
+                Debug.Log("GameMain.mainPlayer.uPosition: " + GameMain.mainPlayer.uPosition.ToString());
+                Debug.Log("GameMain.mainPlayer.uRotation: " + GameMain.mainPlayer.uRotation.ToString());
+            }
+
+            #endregion
+
+            #region 测试手动旋转
+
+            // 创建一个新的四元数，表示沿x轴旋转90度
+            Quaternion xRotationQuaternion = Quaternion.AngleAxis(90f, Vector3.right);
+            // 创建一个新的四元数，表示沿y轴旋转90度
+            Quaternion yRotationQuaternion = Quaternion.AngleAxis(90f, Vector3.up);
+            // 创建一个新的四元数，表示沿z轴旋转90度
+            Quaternion zRotationQuaternion = Quaternion.AngleAxis(90f, Vector3.forward);
+
+            //if (odin != null && Input.GetKeyDown(KeyCode.X))
+            //{
+            //    // 将旋转四元数应用到odin的局部旋转上
+            //    odin.transform.localRotation = odin.transform.localRotation * xRotationQuaternion;
+            //}
+            //if (odin != null && Input.GetKeyDown(KeyCode.Y))
+            //{
+            //    // 将旋转四元数应用到odin的局部旋转上
+            //    odin.transform.localRotation = odin.transform.localRotation * yRotationQuaternion;
+            //}
+            //if (odin != null && Input.GetKeyDown(KeyCode.Z))
+            //{
+            //    // 将旋转四元数应用到odin的局部旋转上
+            //    odin.transform.localRotation = odin.transform.localRotation * zRotationQuaternion;
+            //}
+
+            #endregion
+
+            #region 自动旋转
+
+            if (odin != null)
+            {
+                // 将旋转四元数应用到odin的局部旋转上
+                odin.transform.localRotation = GameMain.mainPlayer.uRotation * xRotationQuaternion;
+                //odin.transform.localRotation = GameMain.mainPlayer.uRotation * yRotationQuaternion;
+                //odin.transform.localRotation = GameMain.mainPlayer.uRotation * zRotationQuaternion;
+            }
+
+            //if (odin != null)
+            //{
+            //    //对每次获取的uRotation进行修正后赋值给odin.transform.localRotation
+            //    odin.transform.localRotation = GameMain.mainPlayer.uRotation * xRotationQuaternion;
+            //}
+
+            #endregion
         }
     }
 }
