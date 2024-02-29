@@ -597,12 +597,12 @@ namespace Prinny
 
             #region 测试手动旋转
 
-            // 创建一个新的四元数，表示沿x轴旋转90度
-            Quaternion xRotationQuaternion = Quaternion.AngleAxis(90f, Vector3.right);
-            // 创建一个新的四元数，表示沿y轴旋转90度
-            Quaternion yRotationQuaternion = Quaternion.AngleAxis(90f, Vector3.up);
-            // 创建一个新的四元数，表示沿z轴旋转90度
-            Quaternion zRotationQuaternion = Quaternion.AngleAxis(90f, Vector3.forward);
+            //// 创建一个新的四元数，表示沿x轴旋转90度
+            //Quaternion xRotationQuaternion = Quaternion.AngleAxis(90f, Vector3.right);
+            //// 创建一个新的四元数，表示沿y轴旋转90度
+            //Quaternion yRotationQuaternion = Quaternion.AngleAxis(90f, Vector3.up);
+            //// 创建一个新的四元数，表示沿z轴旋转90度
+            //Quaternion zRotationQuaternion = Quaternion.AngleAxis(90f, Vector3.forward);
 
             //if (odin != null && Input.GetKeyDown(KeyCode.X))
             //{
@@ -627,9 +627,12 @@ namespace Prinny
             if (odin != null)
             {
                 // 将旋转四元数应用到odin的局部旋转上
-                odin.transform.localRotation = GameMain.mainPlayer.uRotation * xRotationQuaternion;
+                odin.transform.localRotation = GameMain.mainPlayer.controller.model.localRotation;
+
+                //odin.transform.localRotation = Quaternion.Inverse(GameMain.mainPlayer.uRotation);
                 //odin.transform.localRotation = GameMain.mainPlayer.uRotation * yRotationQuaternion;
                 //odin.transform.localRotation = GameMain.mainPlayer.uRotation * zRotationQuaternion;
+
             }
 
             //if (odin != null)
