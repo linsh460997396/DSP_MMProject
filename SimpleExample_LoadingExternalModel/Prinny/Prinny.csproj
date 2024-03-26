@@ -63,10 +63,23 @@
     <Reference Include="UnityEngine.PhysicsModule">
       <HintPath>F:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>F:\SteamLibrary\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
+    <Compile Include="Scripts\Game\Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\MeshCutting\CameraOrbit.cs" />
+    <Compile Include="Scripts\MeshCutting\DrawBounds.cs" />
+    <Compile Include="Scripts\MeshCutting\ExploreSlice.cs" />
+    <Compile Include="Scripts\MeshCutting\Intersections.cs" />
+    <Compile Include="Scripts\MeshCutting\MeshCutter.cs" />
+    <Compile Include="Scripts\MeshCutting\MeshUtils.cs" />
+    <Compile Include="Scripts\MeshCutting\MouseSlice.cs" />
+    <Compile Include="Scripts\MeshCutting\ObjectManager.cs" />
+    <Compile Include="Scripts\MeshCutting\ScreenLineRenderer.cs" />
+    <Compile Include="Scripts\MeshCutting\TempMesh.cs" />
     <Compile Include="Scripts\MetalMaxSystem\Class\CodeObfuscator\CodeObfuscator.cs" />
     <Compile Include="Scripts\MetalMaxSystem\Class\DotNetEvent\KeyboardHook.cs" />
     <Compile Include="Scripts\MetalMaxSystem\Class\DotNetEvent\MouseHook.cs" />

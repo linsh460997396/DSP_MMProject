@@ -401,6 +401,7 @@ namespace Prinny
 
         public GameObject odin;
         public GameObject icarus;
+        ExploreSlice exploreSlice;
 
         //↓入口函数处运用示范↓
         private void Awake()
@@ -424,6 +425,8 @@ namespace Prinny
                     Debug.Log("GameObject " + i + " Name: " + gameObjectGroup[i].name);
                 }
             }
+            exploreSlice = new ExploreSlice();
+            Debug.Log("挂载ExploreSlice模型爆炸功能！");
         }
 
         private void Update()
@@ -438,28 +441,28 @@ namespace Prinny
                 if (!isCoroutineRunning)
                 {
                     icarus = GameObject.Find("Player (Icarus 1)");
-                    if (icarus != null)
-                    {
-                        Debug.Log("伊卡洛斯当前位置");
-                        Debug.Log("GameMain.mainPlayer.gameObject.name: " + GameMain.mainPlayer.gameObject.name);
-                        Debug.Log("GameMain.mainPlayer.gameObject.transform.position: " + GameMain.mainPlayer.gameObject.transform.position.ToString());
-                        Debug.Log("GameMain.mainPlayer.gameObject.transform.rotation: " + GameMain.mainPlayer.gameObject.transform.rotation.ToString());
-                        Debug.Log("GameMain.mainPlayer.transform.position: " + GameMain.mainPlayer.transform.position.ToString());
-                        Debug.Log("GameMain.mainPlayer.transform.rotation: " + GameMain.mainPlayer.transform.rotation.ToString());
-                        Debug.Log("GameMain.mainPlayer.transform.localPosition: " + GameMain.mainPlayer.transform.localPosition.ToString());
-                        Debug.Log("GameMain.mainPlayer.transform.localRotation: " + GameMain.mainPlayer.transform.localRotation.ToString());
-                        Debug.Log("GameMain.mainPlayer.uPosition: " + GameMain.mainPlayer.uPosition.ToString());
-                        Debug.Log("GameMain.mainPlayer.uRotation: " + GameMain.mainPlayer.uRotation.ToString());
-                        //[Info: Unity Log] GameMain.mainPlayer.gameObject.name: Player(Icarus 1)
-                        //[Info: Unity Log] GameMain.mainPlayer.gameObject.transform.position: (161.3, -12.3, 118.0)
-                        //[Info: Unity Log] GameMain.mainPlayer.gameObject.transform.rotation: (0.6, 0.3, -0.3, 0.6)
-                        //[Info: Unity Log] GameMain.mainPlayer.transform.position: (161.3, -12.3, 118.0)
-                        //[Info: Unity Log] GameMain.mainPlayer.transform.rotation: (0.6, 0.3, -0.3, 0.6)
-                        //[Info: Unity Log] GameMain.mainPlayer.transform.localPosition: (161.3, -12.3, 118.0)
-                        //[Info: Unity Log] GameMain.mainPlayer.transform.localRotation: (0.6, 0.3, -0.3, 0.6)
-                        //[Info: Unity Log] GameMain.mainPlayer.uPosition: [-34931.1093807605,-753.175833974017,-19735.9561231628]
-                        //[Info: Unity Log] GameMain.mainPlayer.uRotation: (0.0, 0.7, 0.7, -0.1)
-                    }
+                    //if (icarus != null)
+                    //{
+                    //    Debug.Log("伊卡洛斯当前位置");
+                    //    Debug.Log("GameMain.mainPlayer.gameObject.name: " + GameMain.mainPlayer.gameObject.name);
+                    //    Debug.Log("GameMain.mainPlayer.gameObject.transform.position: " + GameMain.mainPlayer.gameObject.transform.position.ToString());
+                    //    Debug.Log("GameMain.mainPlayer.gameObject.transform.rotation: " + GameMain.mainPlayer.gameObject.transform.rotation.ToString());
+                    //    Debug.Log("GameMain.mainPlayer.transform.position: " + GameMain.mainPlayer.transform.position.ToString());
+                    //    Debug.Log("GameMain.mainPlayer.transform.rotation: " + GameMain.mainPlayer.transform.rotation.ToString());
+                    //    Debug.Log("GameMain.mainPlayer.transform.localPosition: " + GameMain.mainPlayer.transform.localPosition.ToString());
+                    //    Debug.Log("GameMain.mainPlayer.transform.localRotation: " + GameMain.mainPlayer.transform.localRotation.ToString());
+                    //    Debug.Log("GameMain.mainPlayer.uPosition: " + GameMain.mainPlayer.uPosition.ToString());
+                    //    Debug.Log("GameMain.mainPlayer.uRotation: " + GameMain.mainPlayer.uRotation.ToString());
+                    //    //[Info: Unity Log] GameMain.mainPlayer.gameObject.name: Player(Icarus 1)
+                    //    //[Info: Unity Log] GameMain.mainPlayer.gameObject.transform.position: (161.3, -12.3, 118.0)
+                    //    //[Info: Unity Log] GameMain.mainPlayer.gameObject.transform.rotation: (0.6, 0.3, -0.3, 0.6)
+                    //    //[Info: Unity Log] GameMain.mainPlayer.transform.position: (161.3, -12.3, 118.0)
+                    //    //[Info: Unity Log] GameMain.mainPlayer.transform.rotation: (0.6, 0.3, -0.3, 0.6)
+                    //    //[Info: Unity Log] GameMain.mainPlayer.transform.localPosition: (161.3, -12.3, 118.0)
+                    //    //[Info: Unity Log] GameMain.mainPlayer.transform.localRotation: (0.6, 0.3, -0.3, 0.6)
+                    //    //[Info: Unity Log] GameMain.mainPlayer.uPosition: [-34931.1093807605,-753.175833974017,-19735.9561231628]
+                    //    //[Info: Unity Log] GameMain.mainPlayer.uRotation: (0.0, 0.7, 0.7, -0.1)
+                    //}
 
                     if (icarus != null)
                     {
@@ -470,10 +473,10 @@ namespace Prinny
                         //GameObject odin = GameObject.Instantiate(gameObjectGroup[0], GameMain.mainPlayer.transform.position, Quaternion.identity);
 
                         Debug.Log("奥丁已创建");
-                        Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
-                        Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
-                        Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
-                        Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
+                        //Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
+                        //Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
+                        //Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
+                        //Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
 
                     }
 
@@ -486,12 +489,12 @@ namespace Prinny
                     }
 
                     //删除预制体内的刚体，防止子物体参与物理引擎，让子模型完全按主体的Transform行动
-                    Rigidbody odinRigidbody = odin.GetComponent<Rigidbody>();
-                    if (odinRigidbody != null)
-                    {
-                        Destroy(odinRigidbody);
-                        Debug.Log("删除odin刚体组件，防止Transform被物理引擎修改");
-                    }
+                    //Rigidbody odinRigidbody = odin.GetComponent<Rigidbody>();
+                    //if (odinRigidbody != null)
+                    //{
+                    //    Destroy(odinRigidbody);
+                    //    Debug.Log("删除odin刚体组件，防止Transform被物理引擎修改");
+                    //}
 
                     #region 对游戏物体进行镭射检测并输出碰撞到的物体名
 
@@ -503,24 +506,6 @@ namespace Prinny
                     // 在 mainPlayer 游戏对象周围指定半径内检测游戏对象
                     Debug.Log("对周围10.0半径内的游戏对象进行镭射检测...");
 
-                    #region 分层检测
-
-                    //LayerMask layerMask;
-                    //for (layerMask = 0; layerMask < ~0; layerMask++)
-                    //{
-                    //    Collider[] hits = Physics.OverlapSphere(GameMain.mainPlayer.transform.position, 10.0f, layerMask);
-
-                    //    // 输出检测到的游戏对象的名称
-                    //    foreach (Collider hit in hits)
-                    //    {
-                    //        //得到游戏对象
-                    //        GameObject hitObject = hit.gameObject;
-                    //        Debug.Log("检测到游戏对象(第" + layerMask.ToString() + "层): " + hitObject.name);
-                    //    }
-                    //}
-
-                    #endregion
-
                     #region 全层检测
 
                     LayerMask layerMask = ~0;
@@ -531,32 +516,103 @@ namespace Prinny
                         //得到游戏对象
                         GameObject hitObject = hit.gameObject;
                         Debug.Log("检测到游戏对象: " + hitObject.name);
+                        //hit.gameObject.AddComponent<DrawBounds>();
+                        //Debug.Log("挂载爆破功能: " + hitObject.name);
                     }
 
                     #endregion
 
                     #endregion
 
+                    #region 衔接
+
                     //衔接前游戏物体的世界坐标系的旋转和位置与要衔接的主体保持一致
-                    odin.transform.position = GameMain.mainPlayer.transform.position;
-                    odin.transform.rotation = GameMain.mainPlayer.transform.rotation;
+                    odin.transform.localPosition = GameMain.mainPlayer.transform.localPosition;
+                    odin.transform.localRotation = GameMain.mainPlayer.controller.model.localRotation;
                     //odin.transform.position = GameMain.mainPlayer.uPosition;
                     //odin.transform.rotation = GameMain.mainPlayer.uRotation;
 
                     //将odin设置为mainPlayer的子对象（直接拼装了，比下方的每帧修正更省事）
                     odin.transform.parent = GameMain.mainPlayer.transform;
                     Debug.Log("奥丁已拼接到mainPlayer");
-
                     //odin.transform.SetParent(GameMain.mainPlayer.gameObject.transform);
 
-                    Debug.Log("拼接后奥丁的变换属性：");
-                    Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
-                    Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
-                    Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
-                    Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
+                    //Debug.Log("拼接后奥丁的变换属性：");
+                    //Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
+                    //Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
+                    //Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
+                    //Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
 
-                    //mainPlayer的游戏物体名（实例对象ID字符串）
-                    //Debug.Log("mainPlayer对应的游戏物体ID：" + GameMain.mainPlayer.gameObject.name);
+                    #endregion
+
+                    #region 给odin添加刚体组件
+
+                    //获取mainPlayer上的刚体组件
+                    //Rigidbody mainPlayerRigidbody = GameMain.mainPlayer.gameObject.GetComponent<Rigidbody>();
+
+                    //获取odin上的刚体组件
+                    Rigidbody odinRigidbody = odin.AddComponent<Rigidbody>();
+
+                    ////复制刚体参数
+                    //odinRigidbody.mass = mainPlayerRigidbody.mass;
+                    //odinRigidbody.drag = mainPlayerRigidbody.drag;
+                    //odinRigidbody.angularDrag = mainPlayerRigidbody.angularDrag;
+                    //odinRigidbody.useGravity = mainPlayerRigidbody.useGravity;
+                    //odinRigidbody.isKinematic = mainPlayerRigidbody.isKinematic;
+                    //odinRigidbody.interpolation = mainPlayerRigidbody.interpolation;
+                    //odinRigidbody.sleepThreshold = mainPlayerRigidbody.sleepThreshold;
+                    //odinRigidbody.velocity = mainPlayerRigidbody.velocity;
+                    //odinRigidbody.angularVelocity = mainPlayerRigidbody.angularVelocity;
+
+                    #endregion
+
+                    #region 给odin添加网格碰撞器组件
+
+                    //MeshCollider odinMeshCollider = odin.AddComponent<MeshCollider>();
+                    //if (odinMeshCollider.sharedMesh != null) { Debug.Log("odinMeshCollider 名字: " + odinMeshCollider.name); }
+                    //MeshFilter meshFilter = gameObjectGroup[0].GetComponentInChildren<MeshFilter>();
+                    //if (meshFilter != null)
+                    //{
+                    //    Debug.Log("Found mesh: " + meshFilter.sharedMesh.name + " in prefab: " + gameObjectGroup[0].name);
+                    //    odinMeshCollider.sharedMesh = meshFilter.sharedMesh;
+                    //}
+                    //MeshRenderer meshRenderer = odin.AddComponent<MeshRenderer>();
+                    //meshRenderer.enabled = true;
+
+                    //foreach (var prefab in gameObjectGroup)
+                    //{
+                    //    MeshFilter meshFilter = prefab.GetComponentInChildren<MeshFilter>();
+                    //    if (meshFilter != null)
+                    //    {
+                    //        Debug.Log("Found mesh: " + meshFilter.sharedMesh.name + " in prefab: " + prefab.name);
+                    //        odinMeshCollider.sharedMesh = meshFilter.sharedMesh;
+                    //        break;
+                    //    }
+                    //}
+
+                    //MeshFilter[] odinMeshFilters = odin.GetComponentsInChildren<MeshFilter>();
+                    //foreach (MeshFilter odinMeshFilter in odinMeshFilters)
+                    //{
+                    //    Debug.Log("MeshFilter 名字: " + odinMeshFilter.name);
+                    //}
+
+                    //// 获取MM_Odin预制体内的Mesh对象
+                    //MeshFilter odinMeshFilter = gameObjectGroup[0].GetComponentInChildren<MeshFilter>();
+                    //if (odinMeshFilter != null)
+                    //{
+                    //    Mesh mmOdinMesh = odinMeshFilter.sharedMesh;
+
+                    //    if (mmOdinMesh != null)
+                    //    {
+                    //        // 给Odin添加Mesh碰撞器，并指定MM_Odin的Mesh
+                    //        MeshCollider odinMeshCollider = odin.AddComponent<MeshCollider>();
+                    //        odinMeshCollider.convex = false; // 如果需要，可以将其设置为true以创建一个凸包碰撞器
+                    //        odinMeshCollider.sharedMesh = mmOdinMesh;
+                    //        Debug.Log("已将名为\"" + mmOdinMesh.name + "\"的Mesh添加到Odin的Mesh碰撞器中。");
+                    //    }
+                    //}
+
+                    #endregion
 
                 }
                 else { Debug.Log("协程未完成！依然读取AB包中..."); }
@@ -574,24 +630,24 @@ namespace Prinny
 
             #region 变换检测
 
-            if (odin != null && Input.GetKeyDown(KeyCode.N))
-            {
-                Debug.Log("当前奥丁变换属性：");
-                Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
-                Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
-                Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
-                Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
-                Debug.Log("当前伊卡洛斯变换属性：");
-                Debug.Log("GameMain.mainPlayer.gameObject.name: " + GameMain.mainPlayer.gameObject.name);
-                Debug.Log("GameMain.mainPlayer.gameObject.transform.position: " + GameMain.mainPlayer.gameObject.transform.position.ToString());
-                Debug.Log("GameMain.mainPlayer.gameObject.transform.rotation: " + GameMain.mainPlayer.gameObject.transform.rotation.ToString());
-                Debug.Log("GameMain.mainPlayer.transform.position: " + GameMain.mainPlayer.transform.position.ToString());
-                Debug.Log("GameMain.mainPlayer.transform.rotation: " + GameMain.mainPlayer.transform.rotation.ToString());
-                Debug.Log("GameMain.mainPlayer.transform.localPosition: " + GameMain.mainPlayer.transform.localPosition.ToString());
-                Debug.Log("GameMain.mainPlayer.transform.localRotation: " + GameMain.mainPlayer.transform.localRotation.ToString());
-                Debug.Log("GameMain.mainPlayer.uPosition: " + GameMain.mainPlayer.uPosition.ToString());
-                Debug.Log("GameMain.mainPlayer.uRotation: " + GameMain.mainPlayer.uRotation.ToString());
-            }
+            //if (odin != null && Input.GetKeyDown(KeyCode.N))
+            //{
+            //    Debug.Log("当前奥丁变换属性：");
+            //    Debug.Log("odin.transform.position: " + odin.transform.position.ToString());
+            //    Debug.Log("odin.transform.rotation: " + odin.transform.rotation.ToString());
+            //    Debug.Log("odin.transform.localPosition: " + odin.transform.localPosition.ToString());
+            //    Debug.Log("odin.transform.localRotation: " + odin.transform.localRotation.ToString());
+            //    Debug.Log("当前伊卡洛斯变换属性：");
+            //    Debug.Log("GameMain.mainPlayer.gameObject.name: " + GameMain.mainPlayer.gameObject.name);
+            //    Debug.Log("GameMain.mainPlayer.gameObject.transform.position: " + GameMain.mainPlayer.gameObject.transform.position.ToString());
+            //    Debug.Log("GameMain.mainPlayer.gameObject.transform.rotation: " + GameMain.mainPlayer.gameObject.transform.rotation.ToString());
+            //    Debug.Log("GameMain.mainPlayer.transform.position: " + GameMain.mainPlayer.transform.position.ToString());
+            //    Debug.Log("GameMain.mainPlayer.transform.rotation: " + GameMain.mainPlayer.transform.rotation.ToString());
+            //    Debug.Log("GameMain.mainPlayer.transform.localPosition: " + GameMain.mainPlayer.transform.localPosition.ToString());
+            //    Debug.Log("GameMain.mainPlayer.transform.localRotation: " + GameMain.mainPlayer.transform.localRotation.ToString());
+            //    Debug.Log("GameMain.mainPlayer.uPosition: " + GameMain.mainPlayer.uPosition.ToString());
+            //    Debug.Log("GameMain.mainPlayer.uRotation: " + GameMain.mainPlayer.uRotation.ToString());
+            //}
 
             #endregion
 
@@ -642,6 +698,43 @@ namespace Prinny
             //}
 
             #endregion
+
+            if (odin != null && Input.GetMouseButtonDown(0))
+            {
+                // 获取鼠标点击的屏幕坐标
+                Vector3 mousePos = Input.mousePosition;
+                Vector3 rayOrigin = Camera.main.transform.position; // 射线的起点：摄像机位置
+                Vector3 rayDirection = Camera.main.ScreenPointToRay(mousePos).direction; // 射线的方向：从摄像机到鼠标点击
+
+                // 投射射线
+                Ray ray = new Ray(rayOrigin, rayDirection);
+                RaycastHit hit;
+                float rayLength = 10000f; // 射线的长度，可以根据需要调整
+                //LayerMask layerMask = LayerMask.GetMask("Default"); // 射线投射的目标层
+                LayerMask layerMask = ~0;
+
+                if (Physics.Raycast(ray, out hit, rayLength, layerMask))
+                {
+                    // 射线击中了物体
+                    Debug.Log("Hit object: " + hit.transform.name);
+                    if (hit.transform.gameObject.GetComponent<DrawBounds>() == null)
+                    {
+                        hit.transform.gameObject.AddComponent<DrawBounds>();
+                        Debug.Log("挂载爆破功能: " + hit.transform.name);
+                    }
+
+
+                    exploreSlice.Explore(hit.transform.gameObject, ray.direction);
+                }
+                else
+                {
+                    // 射线没有击中任何物体
+                    Debug.Log("No object hit");
+                    // 使用Debug.DrawRay在Scene视图中绘制射线
+                    Debug.DrawRay(rayOrigin, rayDirection * rayLength, Color.red, 0.5f); // 红色射线，持续0.5秒
+                }
+
+            }
         }
     }
 }
